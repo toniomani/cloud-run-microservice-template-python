@@ -1,13 +1,13 @@
-FROM python:3.10-slim
+# Usamos la imagen completa que ya trae todas las herramientas científicas y de compilación
+FROM python:3.10
 
 WORKDIR /app
 
-# --- NUEVO PASO ---
-# Instalar los compiladores de C y herramientas de sistema para poder instalar River
-RUN apt-get update && apt-get install -y build-essential gcc g++
-
 # Copiar los archivos del proyecto
 COPY . .
+
+# Actualizar pip y las herramientas de construcción para evitar errores con librerías pesadas
+RUN pip install --upgrade pip setuptools wheel
 
 # Instalar las dependencias de Python
 RUN pip install --no-cache-dir -r requirements.txt
