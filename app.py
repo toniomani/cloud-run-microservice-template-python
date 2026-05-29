@@ -7,7 +7,7 @@ from google.cloud import storage
 from river import linear_model, preprocessing, metrics, optim
 
 # =========================================================
-# CONFIGURACIÓN
+# CONFIGURACIÓN 
 # =========================================================
 st.set_page_config(page_title="Aprendizaje en línea", page_icon="🚕")
 st.title("Aprendizaje en línea con River (Step-by-step desde GCS)")
